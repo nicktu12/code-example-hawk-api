@@ -1,12 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { HawkReference } from "./HawkReference";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <HawkReference></HawkReference>
     </div>
   );
-}
+};
 
 export default App;

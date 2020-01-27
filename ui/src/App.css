@@ -1,3 +1,358 @@
-a {
-  color: #00B9B3;
+/* App  */
+
+:root {
+  --main-color-dark: rgb(196, 196, 196);
+  --main-color-mid: rgb(225, 225, 225);
+  --main-color-midlight: rgb(231, 231, 231);
+  --main-color-light: rgb(238, 238, 238);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hawk-reference {
+  display: flex;
+  padding: 5px;
+}
+
+/* Details */
+
+.hawk-details-hide {
+  display: none;
+}
+
+.hawk-details {
+  display: initial;
+  width: 100%;
+  display: grid;
+  grid-row-gap: 8px;
+  background-color: var(--main-color-light);
+  border: 8px solid var(--main-color-dark);
+  padding: 4px 8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr 3fr 3fr 2fr;
+  grid-template-areas: "nameLabel nameLabel nameInput nameInput nameInput nameInput nameInput nameInput" "sizeLabel sizeLabel sizeInput sizeInput sizeInput . . ." "genderLabel genderLabel genderInput genderInput genderInput . . ." "lengthLabel lengthLabel lengthFrom lengthFromInput lengthTo lengthToInput lengthUnits lengthUnits" "wingspanLabel wingspanLabel wingspanFrom wingspanFromInput wingspanTo wingspanToInput wingspanUnits wingspanUnits" "weightLabel weightLabel weightFrom weightFromInput weightTo weightToInput weightUnits weightUnits" "urlLabel urlLabel urlInput urlInput urlInput urlInput urlInput urlInput" "colorDescription colorDescription colorDescription colorDescription colorDescription colorDescription colorDescription colorDescription" "behaviorDescription behaviorDescription behaviorDescription behaviorDescription behaviorDescription behaviorDescription behaviorDescription behaviorDescription" "habitatDescription habitatDescription habitatDescription habitatDescription habitatDescription habitatDescription habitatDescription habitatDescription" ". . . . . . saveButton saveButton";
+}
+
+.hawk-details label {
+  background-color: var(--main-color-mid);
+  padding-top: 6px;
+  padding-left: 8px;
+}
+
+#name,
+#url {
+  font-size: 16px;
+  border: 4px solid var(--main-color-mid);
+  margin-left: 6px;
+}
+
+#size,
+#gender {
+  height: 100%;
+  margin-left: 6px;
+  background-color: var(--main-color-midlight);
+  border: none;
+  font-size: 16px;
+}
+
+.length-label,
+.wingspan-label,
+.weight-units,
+.wingspan-units,
+.weight-label,
+.length-units {
+  padding-top: 6px;
+  padding-left: 8px;
+  background-color: var(--main-color-mid);
+}
+
+.length-to,
+.wingspan-to,
+.weight-to,
+.length-from,
+.wingspan-from,
+.weight-from {
+  margin-left: 6px;
+  padding-right: 6px;
+}
+
+.length-from-input,
+.length-to-input,
+.wingspan-from-input,
+.wingspan-to-input,
+.weight-from-input,
+.weight-to-input {
+  height: 100%;
+  margin-left: 6px;
+  background-color: var(--main-color-midlight);
+  border: none;
+  font-size: 16px;
+}
+
+.color-description textarea,
+.behavior-description textarea,
+.habitat-description textarea {
+  display: block;
+  width: 98%;
+  height: 62%;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.save-button {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--main-color-dark);
+}
+
+/* Grid areas  */
+
+.hawk-details .name-label {
+  grid-area: nameLabel;
+}
+
+.hawk-details #name {
+  grid-area: nameInput;
+}
+
+.hawk-details .size-label {
+  grid-area: sizeLabel;
+}
+
+.hawk-details #size {
+  grid-area: sizeInput;
+}
+
+.hawk-details .gender-label {
+  grid-area: genderLabel;
+}
+
+.hawk-details #gender {
+  grid-area: genderInput;
+}
+
+.hawk-details .length-label {
+  grid-area: lengthLabel;
+}
+
+.hawk-details .length-from {
+  grid-area: lengthFrom;
+}
+
+.hawk-details .length-from-input {
+  grid-area: lengthFromInput;
+}
+
+.hawk-details .length-to {
+  grid-area: lengthTo;
+}
+
+.hawk-details .length-to-input {
+  grid-area: lengthToInput;
+}
+
+.hawk-details .length-units {
+  grid-area: lengthUnits;
+}
+
+.hawk-details .wingspan-label {
+  grid-area: wingspanLabel;
+}
+
+.hawk-details .wingspan-from {
+  grid-area: wingspanFrom;
+}
+
+.hawk-details .wingspan-from-input {
+  grid-area: wingspanFromInput;
+}
+
+.hawk-details .wingspan-to {
+  grid-area: wingspanTo;
+}
+
+.hawk-details .wingspan-to-input {
+  grid-area: wingspanToInput;
+}
+
+.hawk-details .wingspan-units {
+  grid-area: wingspanUnits;
+}
+
+.hawk-details .weight-label {
+  grid-area: weightLabel;
+}
+
+.hawk-details .weight-from {
+  grid-area: weightFrom;
+}
+
+.hawk-details .weight-from-input {
+  grid-area: weightFromInput;
+}
+
+.hawk-details .weight-to {
+  grid-area: weightTo;
+}
+
+.hawk-details .weight-to-input {
+  grid-area: weightToInput;
+}
+
+.hawk-details .weight-units {
+  grid-area: weightUnits;
+}
+
+.hawk-details .url-label {
+  grid-area: urlLabel;
+}
+
+.hawk-details #url {
+  grid-area: urlInput;
+}
+
+.hawk-details .color-description {
+  grid-area: colorDescription;
+}
+
+.hawk-details .behavior-description {
+  grid-area: behaviorDescription;
+}
+
+.hawk-details .habitat-description {
+  grid-area: habitatDescription;
+}
+
+.hawk-details .save-button {
+  grid-area: saveButton;
+}
+
+/* Table */
+
+.hawk-table {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-rows: 1fr 1fr auto auto;
+  grid-template-columns: 4fr 2fr 1fr 1fr;
+  grid-template-areas: "addButton . . ." "inputFilter . . ." "nameFilter sizeFilter genderFilter ." "table table table table";
+  width: 100%;
+  padding: 2%;
+}
+
+.add-button {
+  grid-area: addButton;
+  background-color: var(--main-color-dark);
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-button span {
+  font-size: 34px;
+  position: relative;
+  top: -3px;
+}
+
+.filter-input {
+  grid-area: inputFilter;
+  width: 80%;
+  display: flex;
+  padding: 1%;
+  background-color: var(--main-color-mid);
+  margin: 2%;
+  margin-left: 0;
+}
+
+.filter-input input {
+  width: 80%;
+  width: 80%;
+  height: 30px;
+  padding-left: 8px;
+  font-size: 16px;
+}
+
+.filter-input button {
+  width: 20%;
+  width: 20%;
+  height: 30px;
+  margin-left: 10px;
+  background-color: var(--main-color-dark);
+  font-size: 16px;
+}
+
+.filter-button {
+  background-color: var(--main-color-dark);
+  height: 30px;
+  font-size: 16px;
+}
+
+.name-filter {
+  grid-area: nameFilter;
+}
+
+.size-filter {
+  grid-area: sizeFilter;
+}
+
+.gender-filter {
+  grid-area: genderFilter;
+}
+
+.table {
+  grid-area: table;
+  list-style: none;
+  margin: 1% 0;
+  background-color: var(--main-color-dark);
+  padding: 8px 6px;
+}
+
+.table .table-row {
+  background-color: var(--main-color-light);
+  margin-bottom: 4px;
+}
+
+.table .table-row:nth-child(2n) {
+  background-color: var(--main-color-mid);
+}
+
+.table .table-row .name {
+  display: inline-block;
+  width: 50%;
+  padding: 12px 8px;
+}
+
+.table .table-row .size {
+  display: inline-block;
+  width: 25%;
+}
+
+.table .table-row .gender {
+  display: inline-block;
+  width: 12.5%;
+}
+
+.table .table-row .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 12.5%;
+}
+
+.table .table-row .button button {
+  height: 30px;
+  min-width: 50%;
+  background-color: var(--main-color-dark);
+  font-size: 16px;
 }
